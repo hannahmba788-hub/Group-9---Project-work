@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Real Estate & Property Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <!-- Logo Section -->
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Real Estate Logo" class="logo">
+                <span class="brand-name">Apex<span class="highlight">Properties</span></span>
+            </div>
+            <nav>
+                <button class="nav-btn active" onclick="openPage('home')">Home</button>
+                <button class="nav-btn" onclick="openPage('services')">Services</button>
+                <button class="nav-btn" onclick="openPage('contact')">Contact</button>
+                <button class="nav-btn" onclick="openPage('payment')">Payment</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content-container">
+
+        <!-- Home / Main Page -->
+        <section id="home" class="page active">
+            <h1>Find Your Dream Property</h1>
+            <img src="hero.jpg" alt="Modern Luxury Villa with Pool" class="responsive-img">
+            <p class="hero-text">We connect you with premium residential and commercial spaces designed around your modern lifestyle.</p>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services" class="page">
+            <h1>Our Real Estate Services</h1>
+            <div class="services-grid">
+                <div class="card">
+                    <img src="service1.jpg" alt="White Luxury Villa with Pool">
+                    <h3>Property Management</h3>
+                    <p>Complete peace of mind. We handle leasing, maintenance, and tenant relations seamlessly.</p>
+                </div>
+                <div class="card">
+                    <!-- Your Third and Final Image Integrated Here -->
+                    <img src="service2.jpg" alt="Aerial View Mega Mansion Estate">
+                    <h3>Residential Sales</h3>
+                    <p>Expert guidance to buy or sell homes with transparent evaluation and market strategy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <h1>Get In Touch With An Agent</h1>
+            <form class="form-container" onsubmit="event.preventDefault();">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="Tell us about the property you are looking for..." required></textarea>
+                
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </section>
+
+        <!-- Payment Page -->
+        <section id="payment" class="page">
+            <h1>Secure Portal: Deposits & Fees</h1>
+            <form class="form-container" onsubmit="event.preventDefault();">
+                <label for="amount">Payment Amount ($)</label>
+                <input type="number" id="amount" min="1" required>
+
+                <label for="card">Card Number</label>
+                <input type="text" id="card" placeholder="1234 5678 1234 5678" required>
+                
+                <div class="form-row">
+                    <div>
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" placeholder="MM/YY" required>
+                    </div>
+                    <div>
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">Authorize Payment</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Page Switching Logic -->
+    <script>
+        function openPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(pageId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+ 
